@@ -1,4 +1,4 @@
-# Project title - ***Update Name Here***
+# Pokemon A New Age 
 
 ## Team members' names:
 - Nicholas Stafford
@@ -35,6 +35,7 @@
 	- 1 week spirits meeting every Wednesday
 	- Tasks will be broken up into smaller pieces due to new language risk
 	- Build smaller pieces and expand to larger tasks 
+  - Jonathan will be the Scrum Master for this Project
 
 6. Project Tracking Software (Trello, Github Project)
   - Github

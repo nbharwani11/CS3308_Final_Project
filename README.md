@@ -6,7 +6,7 @@
 - Sean Mulligan
 - Naureen Bharwani
 
-
+## Information for Project:
 1. Vision statement: what would you tell potential customers?
   - We love Pokemon! Gotta catch'em all!
 

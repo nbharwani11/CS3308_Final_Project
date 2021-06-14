@@ -1,4 +1,4 @@
-# Pokemon A New Age 
+# Project Title: Pokemon A New Age 
 
 ## Team members' names:
 - Nicholas Stafford

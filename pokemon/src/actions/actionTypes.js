@@ -1,1 +1,4 @@
 export const FETCH_POKEMONS = 'FETCH_POKEMONS';
+export const FETCH_POKEMON = 'FETCH_POKEMON';
+export const UPDATE_BAG = 'UPDATE_BAG';
+export const FETCH_BAG_DETAILS = 'FETCH_BAG_DETAILS';

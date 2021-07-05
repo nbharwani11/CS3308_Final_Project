@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
     return (
-        <Link to={`/pokedex`}>POKEDEX</Link>
+        <Link to={`/pokedex`} className="alert alert-primary">POKEDEX</Link>
     )
 };
 

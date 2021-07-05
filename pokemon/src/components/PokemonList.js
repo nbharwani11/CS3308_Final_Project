@@ -2,7 +2,10 @@ import React from 'react';
 
 import Card from './Card'
 
-const PokemonList = ({ pokemons, filter, bag, updateBag }) => {
+const PokemonList = (props) => {
+    const { pokemons, filter, bag, updateBag } = props;
+    console.log(props.pokemons)
+    console.log(pokemons)
     return pokemons ? (
         pokemons
             .filter(filteredPokemon => filteredPokemon.name.includes(filter.toLowerCase()))

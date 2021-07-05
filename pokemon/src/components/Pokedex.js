@@ -27,7 +27,7 @@ class Pokedex extends Component {
 
         return (
             <>
-                <Link to={`/battle`}>BATTLE</Link>
+                <Link to={"/battle"}>BATTLE</Link>
                 <Bag
                     pokemons={pokemons}
                     bag={bag}

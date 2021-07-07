@@ -1,28 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Card = ({ pokemon, showDetails, bag, updateBag }) => {
+const Card = ({ pokemon, showDetails, bag, isBag, updateBag }) => {
     const changeHandler = () => {
-        updateBag(pokemon.id)
+        updateBag(pokemon)
     }
 
     return (
-        <div className="card" style={{width: "300px"}} >
-            <img src={ 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + pokemon.id + '.png' } className="card-img-top" alt={ pokemon.name } />
-            <div className="card-body">
-                <h5 className="card-title">{ pokemon.name }</h5>
-                {showDetails && <Link to={`/pokedex/${pokemon.id}`} className="btn btn-primary">Details</Link>}
-                {/* <button className="btn btn-success" onClick={() => changeHandler()}>
-                    {bag.includes(pokemon.id) ? "Remove from Bag" : "Add to Bag"}
-                </button> */}
-                {bag.includes(pokemon.id) ? (
-                    <button className="btn btn-warning" onClick={() => changeHandler()}>
-                        Remove from Bag
-                    </button> ) : (
-                    <button className="btn btn-success" onClick={() => changeHandler()}>
-                        Add to Bag
-                    </button>)
-                }
+        <div className={isBag ? "col-sm-12 col-md-2" : null} style={{width: "20%"}}>
+            <div className="card text-center">
+                <div className="card -header">{ pokemon.name }</div>
+                <div className="card -content">
+                    <img src={ pokemon.sprites.front_default } className="card-img-top" alt={ pokemon.name } />
+                </div>
+                <div className="card -footer">
+                    {showDetails && <Link to={`/pokedex/${pokemon.id}`} className="btn btn-primary">Details</Link>}
+                    {bag.includes(pokemon) ? (
+                        <button className="btn btn-warning" onClick={() => changeHandler()}>
+                            Remove
+                        </button> ) : (
+                        <button className="btn btn-success" onClick={() => changeHandler()}>
+                            Add
+                        </button>)
+                    }    
+                </div>
             </div>
         </div>
     )

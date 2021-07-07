@@ -2,16 +2,20 @@ import * as actionTypes from './actionTypes';
 import pokeapi from '../apis/pokeapi';
 
 export const fetchPokemons = () => async dispatch => {
-    const response = await pokeapi.get('?limit=151');
+    const pokemenDetailsArray = Array.from(Array(151).keys())
 
-    response.data.results.map((pokemon, i) =>  {
-        pokemon.id = parseInt(i+1)
+    const promises = pokemenDetailsArray.map((id) => {
+        const pokeIndex = id + 1;
+        return pokeapi.get('/' + pokeIndex)
     })
-    
+ 
+    const responses = await Promise.all(promises)
+
     dispatch({
         type: actionTypes.FETCH_POKEMONS,
-        payload: response.data.results
+        payload: responses.map((response) => response.data)
     })
+    
 };
 
 export const fetchPokemon = (id) => async dispatch => {
@@ -30,7 +34,7 @@ export const updateBag = (id) => async dispatch => {
     })
 };
 
-export const fetchBagDetails = (bag) => async dispatch => {
+export const fetchOpponentBag = (bag) => async dispatch => {
     const pokemenDetailsArray = [...bag]
 
     const promises = pokemenDetailsArray.map((id) => {
@@ -40,7 +44,7 @@ export const fetchBagDetails = (bag) => async dispatch => {
     const responses = await Promise.all(promises)
 
     dispatch({
-        type: actionTypes.FETCH_BAG_DETAILS,
+        type: actionTypes.FETCH_OPPONENT_BAG,
         payload: responses.map((response) => response.data)
     })
 };

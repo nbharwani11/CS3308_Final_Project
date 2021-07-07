@@ -26,10 +26,9 @@ class Pokedex extends Component {
         const { pokemons, bag, updateBag } = this.props;
 
         return (
-            <>
+            <div className="container">
                 <Link to={"/battle"}>BATTLE</Link>
                 <Bag
-                    pokemons={pokemons}
                     bag={bag}
                     updateBag={updateBag}
                 />
@@ -42,7 +41,7 @@ class Pokedex extends Component {
                     bag={bag}
                     updateBag={updateBag}
                 />
-            </>
+            </div>
         )
     }
 }

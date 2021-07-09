@@ -24,9 +24,12 @@ class Pokedex extends Component {
 
     render() {
         const { pokemons, bag, updateBag } = this.props;
-
+        console.log("pokemons", pokemons)
+        console.log("bag", bag)
+        console.log("move", pokemons.name)
         return (
             <div className="container">
+                <Link to={"../"}>HOME</Link>
                 <Link to={"/battle"}>BATTLE</Link>
                 <Bag
                     bag={bag}

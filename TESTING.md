@@ -6,10 +6,6 @@
 - Sean Mulligan
 - Naureen Bharwani
 
-## Automated Test Cases: 
-Explain how to run the test cases and the expected output. The instructor should be able to clone your repository and replicate your test results. You should have at least three automated tests.
-
-
 ## User Acceptance Testing: 
 The purpose of these tests is to have a formatted plan that you could provide to users to go through the steps in using your application and report whether it was successful or not.
 
@@ -94,3 +90,8 @@ Notes
     N/A
 Post-conditions
     Detail page is displayed for a single Pokemon(Height, Weight, Type). User is able to click the next button to see the next Pokemon in the Pokedex(for Pokemon numbered 1-150). User should see a previous button in the Pokedex(for Pokemon numbered 2-151).
+
+
+## Automated Test Cases: 
+Explain how to run the test cases and the expected output. The instructor should be able to clone your repository and replicate your test results. You should have at least three automated tests.
+

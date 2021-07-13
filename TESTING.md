@@ -11,6 +11,7 @@ The purpose of these tests is to have a formatted plan that you could provide to
 
 
 **1. Check Homepage Text**
+    
     Description:
     Verify the word 'Others' appears on Homepage
     
@@ -37,6 +38,7 @@ The purpose of these tests is to have a formatted plan that you could provide to
     
     
 **2. Check Bag Contents**
+    
     Description:
     Verify a specific Pokemon (Bulbasaur) shows up in bag
     
@@ -65,6 +67,7 @@ The purpose of these tests is to have a formatted plan that you could provide to
         
         
 **3. Check Pokemon is in Pokemon List**
+    
     Description:
     Verify a user can see a pokemon displayed in Pokemon List
     
@@ -95,6 +98,7 @@ The purpose of these tests is to have a formatted plan that you could provide to
 Explain how to run the test cases and the expected output. The instructor should be able to clone your repository and replicate your test results. You should have at least three automated tests.
 
 **Steps:**
+
     1. cd pokemon
     2. npm install
     3. npm tests

@@ -10,86 +10,63 @@
 The purpose of these tests is to have a formatted plan that you could provide to users to go through the steps in using your application and report whether it was successful or not.
 
 
-1. Check Navigation Button
+1. Check Homepage Text
 Description
-    Verify the Pokedex button navigates you to the Pokedex page
+    Verify the word 'Others' appears on Homepage
 Pre-conditions
     Webpage itself loads
 Test steps
     1. Navigate to webpage
-    2. Click on Pokedex button
 Expected result
-    User should be able to navigate to the Pokedex page
+    User should be able to see 'Others' in welcome message
 Actual result
-    User is be able to navigate to the Pokedex page
+    User should be able to see 'Others' in welcome message
 Status (Pass/Fail)
     Pass
 Notes
     N/A
 Post-conditions
-    The Pokedex is displayed and the user is able to add/remove bag selection or navigate to the battle page
+    Homepage is displayed and a user is able to read the text on Homepage or navigate to Pokedex page
     
     
-2. Check Search Bar
+2. Check Bag Contents
 Description
-    Verify a specific Pokemon shows up in the search bar
+    Verify a specific Pokemon (Bulbasaur) shows up in bag
 Pre-conditions
     Pokedex page itself loads
 Test steps
     1. Navigate to webpage
     2. Click on Pokedex button
-    3. Enter a specific Pokemon's name into the search bar
+    3. Added Bulbasaur to bag
 Expected result
-    User should have single Pokemon's card displayed on the screen 
+    User should have Pokemon Bulbasaur in bag
 Actual result
-    Single Pokemon's card is displayed on the screen 
+    Pokemon Bulbasaur is displayed in bag 
 Status (Pass/Fail)
     Pass
 Notes
     N/A
 Post-conditions
-    Single Pokemon's card is displayed on the screen and the user is able to add/remove bag selection, navigate to the battle page, or click on the details page
+    Pokemon Bulbasaur is displayed in bag and a user is able to add/remove bag selection, navigate to the battle page, or click on details page
         
-3. Check Adding/Removing from the Bag
+3. Check Pokemon is in Pokemon List
 Description
-    Verify a user can add and/or remove a pokemon to/from the bag
+    Verify a user can see a pokemon displayed in Pokemon List
 Pre-conditions
     Pokedex page itself loads
 Test steps
     1. Navigate to webpage
     2. Click on Pokedex button
-    3. Click on the add button
-    4. Click on the remove button
 Expected result
-    User should be able to see a single Pokemon added to their bag. User should be able to see a single Pokemon removed from their bag.
+    User should be able to see Pokemon Bulbasaur in Pokedex
 Actual result
-    Single Pokemon is added to the bag. Single Pokemon is removed from the bag.
+    User sees Pokemon Bulbasaur displayed in Pokedex
 Status (Pass/Fail)
     Pass
 Notes
     N/A
 Post-conditions
-    Single Pokemon is in the bag. Single Pokemon is removed from the bag. User is able to add/remove bag selection, navigate to the battle page, or click on the details page.
-
-4. Check Details Page 
-Description
-    Verify a user can view the information on the details page for a specific Pokemon
-Pre-conditions
-    Pokedex page itself loads
-Test steps
-    1. Navigate to webpage
-    2. Click on Pokedex button
-    3. Click on the Details button
-Expected result
-    User should be able to see a single Pokemon's details in a separate page.
-Actual result
-    User is be able to see a single Pokemon's details in a separate page.
-Status (Pass/Fail)
-    Pass
-Notes
-    N/A
-Post-conditions
-    Detail page is displayed for a single Pokemon(Height, Weight, Type). User is able to click the next button to see the next Pokemon in the Pokedex(for Pokemon numbered 1-150). User should see a previous button in the Pokedex(for Pokemon numbered 2-151).
+    Pokemon Bulbasaur displayed in Pokedex. User is able to add/remove bag selection, navigate to the battle page, or click on the details page.
 
 
 ## Automated Test Cases: 

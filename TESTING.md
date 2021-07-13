@@ -11,28 +11,28 @@ The purpose of these tests is to have a formatted plan that you could provide to
 
 
 1. Check Homepage Text
-    Description
+    Description:
     Verify the word 'Others' appears on Homepage
     
-    Pre-conditions
+    Pre-conditions:
     Webpage itself loads
     
-    Test steps
+    Test steps:
     1. Navigate to webpage
     
-    Expected result
+    Expected result:
     User should be able to see 'Others' in welcome message
     
-    Actual result
+    Actual result:
     User should be able to see 'Others' in welcome message
     
-    Status (Pass/Fail)
+    Status (Pass/Fail):
     Pass
     
-    Notes
+    Notes:
     N/A
     
-    Post-conditions
+    Post-conditions:
     Homepage is displayed and a user is able to read the text on Homepage or navigate to Pokedex page
     
     

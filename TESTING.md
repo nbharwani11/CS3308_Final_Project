@@ -95,3 +95,11 @@ Post-conditions
 ## Automated Test Cases: 
 Explain how to run the test cases and the expected output. The instructor should be able to clone your repository and replicate your test results. You should have at least three automated tests.
 
+Steps:
+1. cd pokemon
+2. npm install
+3. npm tests
+
+
+
+

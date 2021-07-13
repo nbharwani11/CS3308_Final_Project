@@ -8,7 +8,7 @@ const Home = () => {
                 <center><img src="pokemon2.png" width="300" height="200"/></center>
             </div>
 
-            <div className="home" style={{"text-align": "center"}} >
+            <div className="home" style={{"textAlign": "center"}} >
                 <h1> Welcome Pokémon Trainers!</h1>
             </div>
             

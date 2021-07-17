@@ -7,6 +7,9 @@ import PokemonList from './PokemonList';
 import Bag from './Bag';
 import SearchBar from './SearchBar';
 
+import Sound from 'react-sound';
+import palettetown from '../utils/audio/palettetown_pokedex.mp3';
+
 class Pokedex extends Component {
     state = {
         nameFilter: '', 
@@ -55,6 +58,12 @@ class Pokedex extends Component {
                     bag={bag}
                     updateBag={updateBag}
                 />
+            <Sound 
+                url={palettetown}
+                playStatus={Sound.status.PLAYING}
+                playFromPosition={300}
+                loop={true}
+            />            
             </div>
         )
     }

@@ -5,6 +5,10 @@ import { fetchPokemon, updateBag } from '../actions';
 
 import Card from './Card';
 
+import Sound from 'react-sound';
+import pokecenter from '../utils/audio/pokecenter_pokedex.mp3';
+
+
 class PokemonDetails extends Component {
     componentDidMount() {
         this.props.fetchPokemon(this.props.match.params.id)
@@ -21,6 +25,12 @@ class PokemonDetails extends Component {
 
         return this.props.pokemon.name ? (
             <div>
+            <Sound 
+                url={pokecenter}
+                playStatus={Sound.status.PLAYING}
+                playFromPosition={300}
+                loop={true}
+            /> 
                 <Link to={`/pokedex`}>BACK</Link>
                 {pokemonId > 1 && <Link to={`/pokedex/${pokemonId - 1}`}>PREVIOUS</Link>}
                 <div>

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Sound from 'react-sound';
 import home_opening from '../utils/audio/home_opening.mp3';
 
+
 const Home = () => {
     return (
         <div>
@@ -29,7 +30,7 @@ const Home = () => {
             <Sound 
                 url={home_opening}
                 playStatus={Sound.status.PLAYING}
-                playFromPosition={0}
+                playFromPosition={300}
                 loop={true}
             />
         </div>

@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Sound from 'react-sound';
+import home_opening from '../utils/audio/home_opening.mp3';
 
 const Home = () => {
     return (
@@ -24,6 +26,12 @@ const Home = () => {
 
             <Link to={`/pokedex`} className="alert alert-primary">POKEDEX</Link>
 
+            <Sound 
+                url={home_opening}
+                playStatus={Sound.status.PLAYING}
+                playFromPosition={0}
+                loop={true}
+            />
         </div>
     )
 };

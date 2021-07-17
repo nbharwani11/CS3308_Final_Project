@@ -3,11 +3,12 @@ import React from 'react';
 import Card from './Card'
 
 const PokemonList = (props) => {
-    const { pokemons, filter, bag, updateBag } = props;
+    const { pokemons, nameFilter, bag, updateBag, typeFilter } = props;
     
     return pokemons ? (
         pokemons
-            .filter(filteredPokemon => filteredPokemon.name.includes(filter.toLowerCase()))
+            .filter(nameFilterPokemon => nameFilterPokemon.name.includes(nameFilter.toLowerCase()))
+            .filter(typeFilterPokemon => typeFilterPokemon.types[0].type.name.includes(typeFilter))
             .map(pokemon => {
                 return (
                     <Card

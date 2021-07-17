@@ -31,7 +31,7 @@ class PokemonDetails extends Component {
                     />                        
                     <p><h5>Height:</h5> {pokemon.height}</p>
                     <p><h5>Weight:</h5> {pokemon.weight}</p>
-                    <p><h5>Type:</h5> Fire, Flying</p>
+                    <p><h5>Type:</h5> {pokemon.types[0].type.name}</p>
                 </div>
                 {pokemonId < 151 && <Link to={`/pokedex/${parseInt(pokemonId) + 1}`}>NEXT</Link>}
             </div>

@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
-const SearchBar = ({ filterPokemon }) => {
+const SearchBar = ({ setFilterPokemon }) => {
     const [inputValue, setInputValue] = useState("");
 
     const handleChange = (event) => {
         const newValue = event.target.value.trim();
 
-        filterPokemon(newValue);
+        setFilterPokemon(newValue);
         setInputValue(newValue);
     }
 

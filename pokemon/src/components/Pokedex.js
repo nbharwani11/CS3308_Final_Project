@@ -9,9 +9,10 @@ import SearchBar from './SearchBar';
 
 class Pokedex extends Component {
     state = {
-        filter: ''
+        nameFilter: '', 
+        typeFilter: ''
     }
-
+    
     componentDidMount() {
         if(this.props.pokemons.length === 0) {
             this.props.fetchPokemons();
@@ -24,6 +25,7 @@ class Pokedex extends Component {
 
     render() {
         const { pokemons, bag, updateBag } = this.props;
+        const pokemonType = ['Fire', 'Water', 'Psychic']
         console.log("pokemons", pokemons)
         console.log("bag", bag)
         console.log("move", pokemons.name)
@@ -36,11 +38,20 @@ class Pokedex extends Component {
                     updateBag={updateBag}
                 />
                 <SearchBar 
-                    filterPokemon={this.filterPokemon}
+                    setFilterPokemon={this.filterPokemon}
                 />
+                        
+                <select name="types" value={this.state.typeFilter} onChange={(event) => this.setState({ typeFilter:event.target.value })}>
+                    <option value="">sort pokemon by primary type</option>
+                    {pokemonType.map(type => <option value={type.toLowerCase()}>{type}</option>)}
+                </select>  
+
+                <input type="range" id="points" name="points" min="1" max="10" />
+
                 <PokemonList
                     pokemons={pokemons}
-                    filter={this.state.filter}
+                    nameFilter={this.state.nameFilter}
+                    typeFilter={this.state.typeFilter}
                     bag={bag}
                     updateBag={updateBag}
                 />

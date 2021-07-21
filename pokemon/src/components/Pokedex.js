@@ -10,6 +10,9 @@ import SearchBar from './SearchBar';
 import Sound from 'react-sound';
 import palettetown from '../utils/audio/palettetown_pokedex.mp3';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button } from 'react-bootstrap';
+
 class Pokedex extends Component {
     state = {
         nameFilter: '', 
@@ -33,10 +36,13 @@ class Pokedex extends Component {
         console.log("bag", bag)
         console.log("move", pokemons.name)
         return (
+            <div class="p-3 mb-2 bg-light text-dark">
             <div className="container">
-                <Link to={"../"}>HOME</Link>
-                <Link to={"/battle"}>BATTLE</Link>
-                <Bag
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-outline-primary"><Link to={"../"}>HOME</Link></button>
+                    <button type="button" class="btn btn-outline-primary"><Link to={"/battle"}>BATTLE</Link></button>
+                </div>
+                <Bag 
                     bag={bag}
                     updateBag={updateBag}
                 />
@@ -51,13 +57,14 @@ class Pokedex extends Component {
 
                 <input type="range" id="points" name="points" min="1" max="10" />
 
-                <PokemonList
+                <PokemonList 
                     pokemons={pokemons}
                     nameFilter={this.state.nameFilter}
                     typeFilter={this.state.typeFilter}
                     bag={bag}
                     updateBag={updateBag}
                 />
+            </div>
             <Sound 
                 url={palettetown}
                 playStatus={Sound.status.PLAYING}

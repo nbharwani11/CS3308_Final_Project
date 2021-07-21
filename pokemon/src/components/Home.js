@@ -26,7 +26,6 @@ const Home = () => {
             <center><img src="pokemon5.jpeg" width="300" height="200"/></center>
 
             <Link to={`/pokedex`} className="alert alert-primary">POKEDEX</Link>
-
             <Sound 
                 url={home_opening}
                 playStatus={Sound.status.PLAYING}

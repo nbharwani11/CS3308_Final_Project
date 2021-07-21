@@ -13,7 +13,8 @@ import palettetown from '../utils/audio/palettetown_pokedex.mp3';
 class Pokedex extends Component {
     state = {
         nameFilter: '', 
-        typeFilter: ''
+        typeFilter: '',
+        maxBaseExperienceFilter: '300'
     }
     
     componentDidMount() {
@@ -28,7 +29,7 @@ class Pokedex extends Component {
 
     render() {
         const { pokemons, bag, updateBag } = this.props;
-        const pokemonType = ['Fire', 'Water', 'Psychic']
+        const pokemonType = ['Grass', 'Fire', 'Water', 'Psychic', 'Normal', 'Electric', 'Ice', 'Fighting', 'Poison', 'Ground', 'Bug', 'Rock', 'Ghost', 'Dragon', 'Fairy']
         console.log("pokemons", pokemons)
         console.log("bag", bag)
         console.log("move", pokemons.name)
@@ -48,13 +49,25 @@ class Pokedex extends Component {
                     <option value="">sort pokemon by primary type</option>
                     {pokemonType.map(type => <option value={type.toLowerCase()}>{type}</option>)}
                 </select>  
-
-                <input type="range" id="points" name="points" min="1" max="10" />
-
+                
+                <label for = "points">
+                    Base Value
+                </label>  
+                <input
+                    type="range" 
+                    id="points" 
+                    name="points" 
+                    min="1" 
+                    max="300" 
+                    value = {this.state.maxBaseExperienceFilter} 
+                    onChange={(event) =>  this.setState({maxBaseExperienceFilter:event.target.value })}
+                />
+                        
                 <PokemonList
                     pokemons={pokemons}
                     nameFilter={this.state.nameFilter}
                     typeFilter={this.state.typeFilter}
+                    maxBaseExperienceFilter={this.state.maxBaseExperienceFilter}
                     bag={bag}
                     updateBag={updateBag}
                 />

@@ -3,12 +3,13 @@ import React from 'react';
 import Card from './Card'
 
 const PokemonList = (props) => {
-    const { pokemons, nameFilter, bag, updateBag, typeFilter } = props;
-    
+    const { pokemons, nameFilter, bag, updateBag, typeFilter, maxBaseExperienceFilter } = props;
+
     return pokemons ? (
         pokemons
             .filter(nameFilterPokemon => nameFilterPokemon.name.includes(nameFilter.toLowerCase()))
             .filter(typeFilterPokemon => typeFilterPokemon.types[0].type.name.includes(typeFilter))
+            .filter(maxBaseExperienceFilterPokemon => maxBaseExperienceFilterPokemon.base_experience < maxBaseExperienceFilter)
             .map(pokemon => {
                 return (
                     <Card

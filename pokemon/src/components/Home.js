@@ -6,7 +6,7 @@ import home_opening from '../utils/audio/home_opening.mp3';
 
 const Home = () => {
     return (
-        <div>
+        <div class="p-3 mb-2 bg-light text-dark">
             <div className="home">
                 <center><img src="pokemon2.png" width="300" height="200"/></center>
             </div>
@@ -25,7 +25,12 @@ const Home = () => {
 
             <center><img src="pokemon5.jpeg" width="300" height="200"/></center>
 
+<<<<<<< HEAD
             <Link to={`/pokedex`} className="alert alert-primary">POKEDEX</Link>
+=======
+            <button type="button" class="btn btn-outline-primary btn-lg btn-block"><Link to={"/pokedex"}>Pokedex</Link></button>
+
+>>>>>>> 4c28c6fd3991eb529d0294cfcba2829f69179f3f
             <Sound 
                 url={home_opening}
                 playStatus={Sound.status.PLAYING}

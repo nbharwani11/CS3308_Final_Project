@@ -6,7 +6,7 @@ import { fetchPokemon, fetchOpponentBag } from '../actions';
 class Pokedex extends Component {
     state = {
         // user state
-        activePokemonIndex: 1,
+        activePokemonIndex: 0,
         userHealth: [100, 100, 100],
 
         // opponent state
@@ -15,7 +15,7 @@ class Pokedex extends Component {
     }
 
     componentDidMount() {
-        // TODO: Add logic to generate a specific array of pokemon with hp equivalent base experience
+        // TODO: Add logic to generate a specific array of pokemon with hp equivalent base experience // decides AI/enemy bag
         const opponentBagArray = [25, 37, 87, 104]
         this.props.fetchOpponentBag(opponentBagArray)
     }
@@ -26,20 +26,43 @@ class Pokedex extends Component {
         const pokemon = bag[activePokemonIndex];
         const opponentPokemon = opponentBag[this.state.activeOpponentPokemonIndex];
         
+        
+        //Attack button script
         const userAttack = () => {
+        
+            //text for user attacks // TODO: call moves and pokemon making attack
+            var textbox = document.createElement('div');
+            textbox.innerHTML = 'POKEMON used ATTACK!';
+            //console.appendChild(textbox);
+            
+            
+            // the code below is just of fancy way of saying opponentHealth = newOpponentHealthArray
+            //Damage modifier for type 
+            let newOpponentHealthArray = opponentHealth
+            newOpponentHealthArray[activeOpponentPokemonIndex] = newOpponentHealthArray[activeOpponentPokemonIndex] - 10
+            this.setState({ 
+                opponentHealth: newOpponentHealthArray
+            })
+            
+             //text for opponent health decrement 
+            //once type modifier is done then, "that attack was super/barely effective"
+            textbox.innerHTML = 'OPPONENT lost XX health!';
+            
+            //text for when opponent attacks back
+            textbox.innerHTML = 'OPPONENT used ATTACK!';
+            
             // the code below is just of fancy way of saying userHealth = newUserHealthArray
+            //Damage modifier for type 
             let newUserHealthArray = [ ...userHealth ]
-            newUserHealthArray[activePokemonIndex] = newUserHealthArray[activePokemonIndex] - 25
+            newUserHealthArray[activePokemonIndex] = newUserHealthArray[activePokemonIndex] - 10
             this.setState({ 
                 userHealth: newUserHealthArray
             })
 
-            // the code below is just of fancy way of saying opponentHealth = newOpponentHealthArray
-            let newOpponentHealthArray = opponentHealth
-            newOpponentHealthArray[activeOpponentPokemonIndex] = newOpponentHealthArray[activeOpponentPokemonIndex] - 33
-            this.setState({ 
-                opponentHealth: newOpponentHealthArray
-            })
+            //text for decrement of user pokemon health 
+             //once type modifier is done then, "that attack was super/barely effective"
+            textbox.innerHTML = 'OPPONENT lost XX health!';
+            
 
             console.groupCollapsed()
                 console.log("userHealth", userHealth)
@@ -83,6 +106,7 @@ class Pokedex extends Component {
                 </div>
 
                 <button onClick={() => userAttack()} className="alert alert-danger">Attack</button>
+
             </>
         ) : null;
     }

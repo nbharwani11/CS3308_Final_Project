@@ -10,6 +10,9 @@ import SearchBar from './SearchBar';
 import Sound from 'react-sound';
 import palettetown from '../utils/audio/palettetown_pokedex.mp3';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button } from 'react-bootstrap';
+
 class Pokedex extends Component {
     state = {
         nameFilter: '', 
@@ -34,10 +37,13 @@ class Pokedex extends Component {
         console.log("bag", bag)
         console.log("move", pokemons.name)
         return (
+            <div class="p-3 mb-2 bg-light text-dark">
             <div className="container">
-                <Link to={"../"}>HOME</Link>
-                <Link to={"/battle"}>BATTLE</Link>
-                <Bag
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-outline-primary"><Link to={"../"}>HOME</Link></button>
+                    <button type="button" class="btn btn-outline-primary"><Link to={"/battle"}>BATTLE</Link></button>
+                </div>
+                <Bag 
                     bag={bag}
                     updateBag={updateBag}
                 />
@@ -49,6 +55,7 @@ class Pokedex extends Component {
                     <option value="">sort pokemon by primary type</option>
                     {pokemonType.map(type => <option value={type.toLowerCase()}>{type}</option>)}
                 </select>  
+<<<<<<< HEAD
                 
                 <label for = "points">
                     Base Value
@@ -64,6 +71,12 @@ class Pokedex extends Component {
                 />
                         
                 <PokemonList
+=======
+
+                <input type="range" id="points" name="points" min="1" max="10" />
+
+                <PokemonList 
+>>>>>>> 4c28c6fd3991eb529d0294cfcba2829f69179f3f
                     pokemons={pokemons}
                     nameFilter={this.state.nameFilter}
                     typeFilter={this.state.typeFilter}
@@ -71,6 +84,7 @@ class Pokedex extends Component {
                     bag={bag}
                     updateBag={updateBag}
                 />
+            </div>
             <Sound 
                 url={palettetown}
                 playStatus={Sound.status.PLAYING}

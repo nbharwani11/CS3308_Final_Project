@@ -11,7 +11,7 @@ import Sound from 'react-sound';
 import palettetown from '../utils/audio/palettetown_pokedex.mp3';
 
 //import 'bootstrap/dist/css/bootstrap.min.css';
-//import { Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 class Pokedex extends Component {
     state = {

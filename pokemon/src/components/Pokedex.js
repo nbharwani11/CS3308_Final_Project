@@ -10,8 +10,8 @@ import SearchBar from './SearchBar';
 import Sound from 'react-sound';
 import palettetown from '../utils/audio/palettetown_pokedex.mp3';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button } from 'react-bootstrap';
+//import 'bootstrap/dist/css/bootstrap.min.css';
+//import { Button } from 'react-bootstrap';
 
 class Pokedex extends Component {
     state = {
@@ -55,7 +55,6 @@ class Pokedex extends Component {
                     <option value="">sort pokemon by primary type</option>
                     {pokemonType.map(type => <option value={type.toLowerCase()}>{type}</option>)}
                 </select>  
-<<<<<<< HEAD
                 
                 <label for = "points">
                     Base Value
@@ -70,13 +69,7 @@ class Pokedex extends Component {
                     onChange={(event) =>  this.setState({maxBaseExperienceFilter:event.target.value })}
                 />
                         
-                <PokemonList
-=======
-
-                <input type="range" id="points" name="points" min="1" max="10" />
-
                 <PokemonList 
->>>>>>> 4c28c6fd3991eb529d0294cfcba2829f69179f3f
                     pokemons={pokemons}
                     nameFilter={this.state.nameFilter}
                     typeFilter={this.state.typeFilter}

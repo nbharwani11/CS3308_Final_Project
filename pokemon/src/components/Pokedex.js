@@ -27,7 +27,7 @@ class Pokedex extends Component {
     }
 
     filterPokemon = (filterString) => {
-        this.setState({ filter: filterString });
+        this.setState({ nameFilter: filterString });
     }
 
     render() {
@@ -37,11 +37,11 @@ class Pokedex extends Component {
         console.log("bag", bag)
         console.log("move", pokemons.name)
         return (
-            <div class="p-3 mb-2 bg-light text-dark">
+            <div className="p-3 mb-2 bg-light text-dark">
             <div className="container">
-                <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-outline-primary"><Link to={"../"}>HOME</Link></button>
-                    <button type="button" class="btn btn-outline-primary"><Link to={"/battle"}>BATTLE</Link></button>
+                <div className="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" className="btn btn-outline-primary"><Link to={"../"}>HOME</Link></button>
+                    <button type="button" className="btn btn-outline-primary"><Link to={"/battle"}>BATTLE</Link></button>
                 </div>
                 <Bag 
                     bag={bag}
@@ -53,10 +53,10 @@ class Pokedex extends Component {
                         
                 <select name="types" value={this.state.typeFilter} onChange={(event) => this.setState({ typeFilter:event.target.value })}>
                     <option value="">sort pokemon by primary type</option>
-                    {pokemonType.map(type => <option value={type.toLowerCase()}>{type}</option>)}
+                    {pokemonType.map(type => <option key={ type } value={type.toLowerCase()}>{type}</option>)}
                 </select>  
                 
-                <label for = "points">
+                <label htmlFor = "points">
                     Base Value
                 </label>  
                 <input

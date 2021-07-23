@@ -21,7 +21,6 @@ class PokemonDetails extends Component {
     render() {
         const { pokemon, bag, updateBag } = this.props;
         const pokemonId = this.props.match.params.id;
-        console.log(pokemon)
 
         return this.props.pokemon.name ? (
             <div>
@@ -41,7 +40,12 @@ class PokemonDetails extends Component {
                     />                        
                     <p><h5>Height:</h5> {pokemon.height}</p>
                     <p><h5>Weight:</h5> {pokemon.weight}</p>
-                    <p><h5>Type:</h5> {pokemon.types[0].type.name}</p>
+                    <p>
+                        <h5>Type:</h5> 
+                        {pokemon.types.map((type) => {
+                            return type.type.name + ' '
+                        })}
+                    </p>
                 </div>
                 {pokemonId < 151 && <Link to={`/pokedex/${parseInt(pokemonId) + 1}`}>NEXT</Link>}
             </div>

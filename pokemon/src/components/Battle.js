@@ -5,6 +5,8 @@ import { fetchPokemon, fetchOpponentBag } from '../actions';
 import BattleCard from './BattleCard';
 import { Container, Modal, Button } from 'react-bootstrap';
 
+import "./battle.css"
+
 class Battle extends Component {
     state = {
         // user state
@@ -122,47 +124,16 @@ class Battle extends Component {
         }
 
         return pokemon && opponentPokemon ? (
-            <div
-                style={{
-                    height: "100vh",
-                    backgroundImage: "url(https://www.tynker.com/projects/screenshot/57da4d8ba924051b458b4567/pokemon-battles-alpha.png)",
-                    "background-position": "center",
-                    "background-size": "cover",
-                }}
-            >
+            <div className="battle">
                 <Container>
                     <Link to={`/pokedex`}>BACK</Link>
                     <BattleCard pokemon={opponentPokemon} currentHealth={opponentHealth[activeOpponentPokemonIndex]} totalHealth={opponentMaxHealth[activeOpponentPokemonIndex]} />
                     <BattleCard pokemon={pokemon} currentHealth={userHealth[activePokemonIndex]} totalHealth={userMaxHealth[activePokemonIndex]} attack={userAttack} reverse />
                     
-                    {isModalOpen && <div
-                        style={{
-                            backgroundColor: "transparent",
-                            height: "100vh",
-                            width: "100vw",
-                            position: "absolute",
-                            top: 0,
-                            left: 0,
-                        }}
-                    >
-                        <Modal.Dialog
-                            style={{
-                                position: "absolute",
-                                top: "50%",
-                                left: "50%",
-                                transform: "translate(-50%, -50%)",
-                                "border-radius": "10px",
-                                border: "1px solid rgba(0, 0, 0, 0.3)",
-                                "-webkit-box-shadow": "0 3px 7px rgba(0, 0, 0, 0.3)",
-                                "-moz-box-shadow": "0 3px 7px rgba(0, 0, 0, 0.3)",
-                                "box-shadow": "0 3px 7px rgba(0, 0, 0, 0.3)",
-                                "-webkit-background-clip": "padding-box",
-                                "-moz-background-clip": "padding-box",
-                                "background-clip": "padding-box",
-                            }}
-                        >
-                            <Modal.Body style={{display: "flex", flexDirection: "column"}}>
-                                <Modal.Title style={{alignSelf: "center"}}>{modalTitle}</Modal.Title>
+                    {isModalOpen && <div className="modal-wrapper">
+                        <Modal.Dialog className="modal-dialog">
+                            <Modal.Body className="modal-body">
+                                <Modal.Title className="modal-title">{modalTitle}</Modal.Title>
                                 <p style={{alignSelf: "center"}}>{modalText}</p>
                                 {!isGameOver ?
                                     <Button onClick={() => opponentAttack()} variant="primary">Continue</Button> 

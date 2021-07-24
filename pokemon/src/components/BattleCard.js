@@ -1,6 +1,8 @@
 import React from 'react';
 import { ProgressBar } from 'react-bootstrap';
 
+import "./battle-card.css"
+
 const BattleCard = ({ pokemon, currentHealth, totalHealth = 100, attack, reverse }) => {
     const attackHandler = (move) => {
         attack(move)
@@ -9,28 +11,17 @@ const BattleCard = ({ pokemon, currentHealth, totalHealth = 100, attack, reverse
     const health = currentHealth/totalHealth * 100
 
     return (
-        <div
-            style={{
-                display: "flex",
-                justifyContent: "space-between",
-                padding: "20px",
-                "border-radius": "10px",
-                "margin-top": "20px",
-                flexDirection: reverse ? "row-reverse" : "",
-                "background-color": "rgba(255, 255, 255, 0.5)",
-                height: "40vh"
-            }}
-        >
-            <div style={{display: "flex", flexDirection: "column"}}>
+        <div className="battle-card" style={{flexDirection: reverse ? "row-reverse" : ""}}>
+            <div style={{display: "flex", flexDirection: "column", gap: "10px"}}>
                 {reverse && pokemon.moves.slice(0, 4).map(
-                    (move) => <button onClick={() => attackHandler(move.move)} className="btn btn-primary">{move.move.name}</button>
+                    (move) => <button key={move.move.name} onClick={() => attackHandler(move.move)} className="btn btn-primary">{move.move.name.toUpperCase()}</button>
                 )}
             </div>
             <div>
                 <div style={{ display: "flex", flexDirection: "column", alignItems: "center"}}>
-                    <div>{ pokemon.name }</div>
+                    <div>{ pokemon.name.toUpperCase() }</div>
                     <img src={reverse ? pokemon.sprites.back_default : pokemon.sprites.front_default } alt={ pokemon.name } />
-                    <div>Health: { currentHealth }/{ totalHealth }</div>
+                    <div>HEALTH: { currentHealth }/{ totalHealth }</div>
                 </div>
                 <ProgressBar now={health} />
             </div>

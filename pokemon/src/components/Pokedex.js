@@ -37,6 +37,9 @@ class Pokedex extends Component {
         console.log("bag", bag)
         console.log("move", pokemons.name)
         return (
+//             <head>
+//                 <link rel="stylesheet" href="Pokedex.css">
+//             </head>
             <div className="p-3 mb-2 bg-light text-dark">
             <div className="container">
                 <div className="btn-group" role="group" aria-label="Basic example">

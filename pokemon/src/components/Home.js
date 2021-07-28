@@ -9,17 +9,17 @@ import "./Home.css"
 const Home = () => {
     return (
             <div className="home">
-                <Container>
+                <Container className="home-container">
                     <h1 className="welcome-banner"><img src="pokemon5.png" width="550" height="100"/></h1>
                     <p className= "main-text"> {`
                      Welcome to the world of Pokémon! This world is inhabited by creatures called Pokémon! 
                      For some people, Pokémon are pets. Others use them for fights. 
                      Your very own Pokémon adventure is about to unfold! 
                      A world of dreams and adventures with Pokémon awaits!
-                     Let's go!
                      `}</p>
-        
-                    <button type="button" class="btn btn-outline-primary btn-lg btn-block"><Link to={"/pokedex"}>Pokédex</Link></button>
+                    <div classname="buttondiv">
+                    <button type="button" className="pokedexButton  btn btn-primary btn-lg"><Link className="btn-primary-link" to={"/pokedex"}>Pokédex</Link></button>
+                    </div>
                     <Sound 
                         url={home_opening}
                         playStatus={Sound.status.PLAYING}

@@ -71,7 +71,46 @@ class Pokedex extends Component {
                     value = {this.state.maxBaseExperienceFilter} 
                     onChange={(event) =>  this.setState({maxBaseExperienceFilter:event.target.value })}
                 />
-                        
+                
+                //put grid system here
+                <div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm">
+                            One of three columns
+                            </div>
+                            <div class="col-sm">
+                              One of three columns
+                            </div>
+                            <div class="col-sm">
+                              One of three columns
+                            </div>
+                            <div class="col-sm">
+                            One of three columns
+                            </div>
+                            <div class="w-100"></div>
+                            <div class="col-sm">
+                            One of three columns
+                            </div>
+                            <div class="col-sm">
+                            One of three columns
+                            </div>
+                            <div class="col-sm">
+                            One of three columns
+                            </div>
+                            <div class="col-sm">
+                            One of three columns
+                            </div>
+                            <div class="col-sm">
+                            One of three columns
+                            </div>
+                            <div class="col-sm">
+                            One of three columns
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+                
                 <PokemonList 
                     pokemons={pokemons}
                     nameFilter={this.state.nameFilter}
@@ -80,6 +119,8 @@ class Pokedex extends Component {
                     bag={bag}
                     updateBag={updateBag}
                 />
+                        
+                        
             </div>
             <Sound 
                 url={palettetown}

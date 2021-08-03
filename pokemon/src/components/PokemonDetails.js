@@ -8,6 +8,7 @@ import Card from './Card';
 import Sound from 'react-sound';
 import pokecenter from '../utils/audio/pokecenter_pokedex.mp3';
 
+import "./PokemonDetails.css"
 
 class PokemonDetails extends Component {
     componentDidMount() {
@@ -23,7 +24,7 @@ class PokemonDetails extends Component {
         const pokemonId = this.props.match.params.id;
 
         return this.props.pokemon.name ? (
-            <div>
+            <div className="pokemon-details">
             <Sound 
                 url={pokecenter}
                 playStatus={Sound.status.PLAYING}

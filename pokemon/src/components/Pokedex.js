@@ -37,9 +37,6 @@ class Pokedex extends Component {
         console.log("bag", bag)
         console.log("move", pokemons.name)
         return (
-//             <head>
-//                 <link rel="stylesheet" href="Pokedex.css">
-//             </head>
             <div className="p-3 mb-2 bg-light text-dark">
             <div className="container">
                 <div className="btn-group" role="group" aria-label="Basic example">
@@ -70,55 +67,18 @@ class Pokedex extends Component {
                     max="300" 
                     value = {this.state.maxBaseExperienceFilter} 
                     onChange={(event) =>  this.setState({maxBaseExperienceFilter:event.target.value })}
-                />
+                />                
                 
-                //put grid system here
-                <div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm">
-                            One of three columns
-                            </div>
-                            <div class="col-sm">
-                              One of three columns
-                            </div>
-                            <div class="col-sm">
-                              One of three columns
-                            </div>
-                            <div class="col-sm">
-                            One of three columns
-                            </div>
-                            <div class="w-100"></div>
-                            <div class="col-sm">
-                            One of three columns
-                            </div>
-                            <div class="col-sm">
-                            One of three columns
-                            </div>
-                            <div class="col-sm">
-                            One of three columns
-                            </div>
-                            <div class="col-sm">
-                            One of three columns
-                            </div>
-                            <div class="col-sm">
-                            One of three columns
-                            </div>
-                            <div class="col-sm">
-                            One of three columns
-                            </div>
-                        </div>
-                    </div>
-                </div>    
-                
-                <PokemonList 
-                    pokemons={pokemons}
-                    nameFilter={this.state.nameFilter}
-                    typeFilter={this.state.typeFilter}
-                    maxBaseExperienceFilter={this.state.maxBaseExperienceFilter}
-                    bag={bag}
-                    updateBag={updateBag}
-                />
+                <div class="row">
+                    <PokemonList 
+                        pokemons={pokemons}
+                        nameFilter={this.state.nameFilter}
+                        typeFilter={this.state.typeFilter}
+                        maxBaseExperienceFilter={this.state.maxBaseExperienceFilter}
+                        bag={bag}
+                        updateBag={updateBag}
+                    />
+                </div>
                         
                         
             </div>

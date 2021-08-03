@@ -17,15 +17,21 @@ const PokemonList = (props) => {
                 return false
             })
             .filter(maxBaseExperienceFilterPokemon => maxBaseExperienceFilterPokemon.base_experience < maxBaseExperienceFilter)
-            .map(pokemon => {
+            .map((pokemon, i) => {
                 return (
-                    <Card
-                        showDetails
-                        key={pokemon.name}
-                        pokemon={ pokemon }
-                        bag={bag}
-                        updateBag={updateBag}
-                    />
+                    <>
+                        <div class="col-sm">
+                            <Card
+                                showDetails
+                                key={pokemon.name}
+                                pokemon={ pokemon }
+                                bag={bag}
+                                updateBag={updateBag}
+                            />
+                        </div>
+                        
+                        {i%4 === 3 && <div class="w-100"></div>}
+                    </>
                 );
             })) : "LOADING..."
 };

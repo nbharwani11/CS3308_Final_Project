@@ -7,23 +7,21 @@ const Card = ({ pokemon, showDetails, bag, isBag, updateBag }) => {
     }
 
     return (
-        <div className={isBag ? "col-sm-12 col-md-2" : null} style={{width: "20%"}}>
-            <div className="card text-center">
-                <div className="card -header">{ pokemon.name }</div>
-                <div className="card -content">
-                    <img src={ pokemon.sprites.front_default } className="card-img-top" alt={ pokemon.name } />
-                </div>
-                <div className="card -footer">
-                    {showDetails && <Link to={`/pokedex/${pokemon.id}`} className="btn btn-primary">Details</Link>}
-                    {bag.includes(pokemon) ? (
-                        <button className="btn btn-warning" onClick={() => changeHandler()}>
-                            Remove
-                        </button> ) : (
-                        <button className="btn btn-success" onClick={() => changeHandler()}>
-                            Add
-                        </button>)
-                    }    
-                </div>
+        <div className="card text-center">
+            <div className="card -header">{ pokemon.name }</div>
+            <div className="card -content">
+                <img src={ pokemon.sprites.front_default } className="card-img-top" alt={ pokemon.name.toUpperCase() } />
+            </div>
+            <div className="card -footer">
+                {showDetails && <Link to={`/pokedex/${pokemon.id}`} className="btn btn-primary">Details</Link>}
+                {bag.includes(pokemon) ? (
+                    <button className="btn btn-warning" onClick={() => changeHandler()}>
+                        Remove
+                    </button> ) : (
+                    <button className="btn btn-success" onClick={() => changeHandler()}>
+                        Add
+                    </button>)
+                }    
             </div>
         </div>
     )

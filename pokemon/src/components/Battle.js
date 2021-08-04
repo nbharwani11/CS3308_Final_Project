@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchPokemon, fetchOpponentBag } from '../actions';
+import pokeapi from '../apis/pokeapi';
 import BattleCard from './BattleCard';
 import { Container, Modal, Button } from 'react-bootstrap';
 
@@ -51,76 +52,89 @@ class Battle extends Component {
         const pokemon = bag[activePokemonIndex];
         const opponentPokemon = opponentBag[this.state.activeOpponentPokemonIndex];
         
+        const getData = async (url) => {
+            const res = await pokeapi.get(url);
+            return await res.data;
+         }
+
         //Attack button script
         const userAttack = (move) => {
             const userMove  = move.name
-            const attackDamage  = 50
 
             this.setState({ 
                 opponentCanAttack: true
             })
 
-            let newOpponentHealthArray = opponentHealth
-            newOpponentHealthArray[activeOpponentPokemonIndex] = newOpponentHealthArray[activeOpponentPokemonIndex] - attackDamage
-            this.setState({
-                opponentHealth: newOpponentHealthArray,
-                isModalOpen: true,
-                modalTitle: "User Attack",
-                modalText: `You used ${userMove} and did ${attackDamage} damage`,
-            })
-
-            if (opponentHealth[activeOpponentPokemonIndex] <= 0) {
-                this.setState({ 
-                    activeOpponentPokemonIndex: activeOpponentPokemonIndex + 1,
-                    opponentCanAttack: false
-                })
-                if (activeOpponentPokemonIndex >= opponentBag.length - 1) {
-                    this.setState({ 
-                        activeOpponentPokemonIndex: 0,
+            getData(move.url)
+                .then(data => {
+                    let newOpponentHealthArray = opponentHealth
+                    newOpponentHealthArray[activeOpponentPokemonIndex] = newOpponentHealthArray[activeOpponentPokemonIndex] - data.power
+                    this.setState({
+                        opponentHealth: newOpponentHealthArray,
                         isModalOpen: true,
-                        modalTitle: "Congrats",
-                        modalText: "Your opponent has no pokemon left. You Win!",
-                        isGameOver: true,
+                        modalTitle: "User Attack",
+                        modalText: `You used ${userMove} and did ${data.power} damage`,
                     })
-                }
-            }
+
+                    if (opponentHealth[activeOpponentPokemonIndex] <= 0) {
+                        const nextIndex = activeOpponentPokemonIndex + 1;
+                        this.setState({ 
+                            activeOpponentPokemonIndex: nextIndex,
+                            opponentCanAttack: false
+                        })
+                        if (activeOpponentPokemonIndex >= opponentBag.length - 1) {
+                            this.setState({ 
+                                activeOpponentPokemonIndex: 0,
+                                isModalOpen: true,
+                                modalTitle: "Congrats",
+                                modalText: "Your opponent has no pokemon left. You Win!",
+                                isGameOver: true,
+                            })
+                        }
+                    }
+                })
+                .catch(err => console.log(err));
         }
 
         const opponentAttack = () => {
-            const userMove  = "move.name"
-            const attackDamage  = 40
+            const moveIndex = Math.floor(Math.random() * opponentPokemon.moves.length)
+            const attackMove = opponentPokemon.moves[moveIndex].move
+            const userMove  = attackMove.name
 
-            if (opponentCanAttack) {
-                let newHealthArray = userHealth
-                newHealthArray[activePokemonIndex] = newHealthArray[activePokemonIndex] - attackDamage
-                this.setState({
-                    userHealth: newHealthArray,
-                    isModalOpen: true,
-                    modalTitle: "Opponent Attack",
-                    modalText: `You used ${userMove} and did ${attackDamage} damage`,
-                    opponentCanAttack: false,
-                })
-                
-                if (userHealth[activePokemonIndex] <= 0) {
-                    console.log("CHANGE")
-                    this.setState({ 
-                        activePokemonIndex: activePokemonIndex + 1,
+            getData(attackMove.url)
+                .then(data => {
+                if (opponentCanAttack) {
+                    let newHealthArray = userHealth
+                    newHealthArray[activePokemonIndex] = newHealthArray[activePokemonIndex] - data.power
+                    this.setState({
+                        userHealth: newHealthArray,
+                        isModalOpen: true,
+                        modalTitle: "Opponent Attack",
+                        modalText: `Your opponent used ${userMove} and did ${data.power} damage`,
+                        opponentCanAttack: false,
                     })
-                    if (activePokemonIndex >= bag.length - 1) {
+                    
+                    if (userHealth[activePokemonIndex] <= 0) {
                         this.setState({ 
-                            activePokemonIndex: 0,
-                            isModalOpen: true,
-                            modalTitle: "Sorry",
-                            modalText: "You have no pokemon left. You Lose!",
-                            isGameOver: true,
+                            activePokemonIndex: activePokemonIndex + 1,
                         })
+                        if (activePokemonIndex >= bag.length - 1) {
+                            this.setState({ 
+                                activePokemonIndex: 0,
+                                isModalOpen: true,
+                                modalTitle: "Sorry",
+                                modalText: "You have no pokemon left. You Lose!",
+                                isGameOver: true,
+                            })
+                        }
                     }
+                } else {
+                    this.setState({ 
+                        isModalOpen: false,
+                    })
                 }
-            } else {
-                this.setState({ 
-                    isModalOpen: false,
-                })
-            }
+            })
+            .catch(err => console.log(err));
         }
 
         return pokemon && opponentPokemon ? (

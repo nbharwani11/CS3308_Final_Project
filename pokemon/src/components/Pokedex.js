@@ -39,6 +39,7 @@ class Pokedex extends Component {
         console.log("bag", bag)
         console.log("move", pokemons.name)
         return (
+<<<<<<< HEAD
             <div className="pokedex">
                 <div className="p-3 mb-2 bg-light text-dark">
                 <div className="container">
@@ -111,6 +112,41 @@ class Pokedex extends Component {
                         </div>
                     </div>    
 
+=======
+            <div className="p-3 mb-2 bg-light text-dark">
+            <div className="container">
+                <div className="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" className="btn btn-outline-primary"><Link to={"../"}>HOME</Link></button>
+                    <button type="button" className="btn btn-outline-primary"><Link to={"/battle"}>BATTLE</Link></button>
+                </div>
+                <Bag 
+                    bag={bag}
+                    updateBag={updateBag}
+                />
+                <SearchBar 
+                    setFilterPokemon={this.filterPokemon}
+                />
+                        
+                <select name="types" value={this.state.typeFilter} onChange={(event) => this.setState({ typeFilter:event.target.value })}>
+                    <option value="">sort pokemon by primary type</option>
+                    {pokemonType.map(type => <option key={ type } value={type.toLowerCase()}>{type}</option>)}
+                </select>  
+                
+                <label htmlFor = "points">
+                    Base Value
+                </label>  
+                <input
+                    type="range" 
+                    id="points" 
+                    name="points" 
+                    min="1" 
+                    max="300" 
+                    value = {this.state.maxBaseExperienceFilter} 
+                    onChange={(event) =>  this.setState({maxBaseExperienceFilter:event.target.value })}
+                />                
+                
+                <div class="row">
+>>>>>>> 7cf75ebbec5c936a23719a3b8a4bceecb1ae9f69
                     <PokemonList 
                         pokemons={pokemons}
                         nameFilter={this.state.nameFilter}
@@ -119,6 +155,7 @@ class Pokedex extends Component {
                         bag={bag}
                         updateBag={updateBag}
                     />
+<<<<<<< HEAD
 
 
                 </div>
@@ -129,6 +166,18 @@ class Pokedex extends Component {
                     loop={true}
                 />            
                 </div>
+=======
+                </div>
+                        
+                        
+            </div>
+            <Sound 
+                url={palettetown}
+                playStatus={Sound.status.PLAYING}
+                playFromPosition={300}
+                loop={true}
+            />            
+>>>>>>> 7cf75ebbec5c936a23719a3b8a4bceecb1ae9f69
             </div>
         )
     }

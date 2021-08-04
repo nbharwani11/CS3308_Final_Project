@@ -20,12 +20,12 @@ const Bag = ({ bag, updateBag }) => {
     }
     
     return (
-        <>
-            <div>BAG</div>
+        <fieldset>
+            <legend>Battle Bag:</legend>
             <div className="row">
                 {renderList()}
             </div>
-        </>
+        </fieldset>
     )
 };
 

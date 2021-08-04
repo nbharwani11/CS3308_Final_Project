@@ -140,7 +140,9 @@ class Battle extends Component {
         return pokemon && opponentPokemon ? (
             <div className="battle">
                 <Container>
-                    <Link to={`/pokedex`}>BACK</Link>
+                    <div classname="buttondiv">
+                    <button type="button" className="backButton  btn btn-primary btn-lg"><Link className="btn-primary-link" to={"/pokedex"}>BACK</Link></button>
+                    </div>
                     <BattleCard pokemon={opponentPokemon} currentHealth={opponentHealth[activeOpponentPokemonIndex]} totalHealth={opponentMaxHealth[activeOpponentPokemonIndex]} />
                     <BattleCard pokemon={pokemon} currentHealth={userHealth[activePokemonIndex]} totalHealth={userMaxHealth[activePokemonIndex]} attack={userAttack} reverse />
                     

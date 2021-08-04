@@ -8,6 +8,7 @@ import Card from './Card';
 import Sound from 'react-sound';
 import pokecenter from '../utils/audio/pokecenter_pokedex.mp3';
 
+
 import "./PokemonDetails.css"
 
 class PokemonDetails extends Component {
@@ -31,9 +32,13 @@ class PokemonDetails extends Component {
                 playFromPosition={300}
                 loop={true}
             /> 
-                <Link to={`/pokedex`}>BACK</Link>
+                <div classname="buttondiv">
+                    <button type="button" className="backButton  btn btn-outline-dark btn-lg"><Link className="btn-primary-link" to={"/pokedex"}>BACK</Link></button>
+                </div>
+        
                 {pokemonId > 1 && <Link to={`/pokedex/${pokemonId - 1}`}>PREVIOUS</Link>}
-                <div>
+
+                <div style={{width: "20%"}}>
                     <Card
                         pokemon={pokemon}
                         bag={bag}

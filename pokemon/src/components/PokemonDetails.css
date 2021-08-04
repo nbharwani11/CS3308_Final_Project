@@ -1,7 +1,10 @@
 .pokemon-details {
     height: 100vh;
-    background-image: url(https://images.nintendolife.com/9a9f3ea24feb7/1st-pokedex.original.jpg);
-    background-position: center;
+    background-image: url('../utils/audio/background.jpg');
+    background-position: absolute;
     background-size: cover;
     z-index: -1;
 }
+
+
+

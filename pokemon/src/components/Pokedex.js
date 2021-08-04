@@ -12,6 +12,7 @@ import palettetown from '../utils/audio/palettetown_pokedex.mp3';
 
 //import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap';
+import "./Pokedex.css"
 
 class Pokedex extends Component {
     state = {
@@ -37,12 +38,13 @@ class Pokedex extends Component {
         console.log("bag", bag)
         console.log("move", pokemons.name)
         return (
-            <div className="p-3 mb-2 bg-light text-dark">
+            <div className="p-3 mb-2 bg-light text-dark" className="pokedex">
             <div className="container">
-                <div className="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" className="btn btn-outline-primary"><Link to={"../"}>HOME</Link></button>
-                    <button type="button" className="btn btn-outline-primary"><Link to={"/battle"}>BATTLE</Link></button>
+                <div classname="buttondiv">
+                      <button type="button" className="homeButton  btn btn-outline-dark btn-lg"><Link className="btn-primary-link" to={"../"}>Home</Link></button>
+                    <button type="button" className="battleButton  btn btn-outline-dark btn-lg"><Link className="btn-primary-link" to={"/battle"}>Battle</Link></button>
                 </div>
+
                 <Bag 
                     bag={bag}
                     updateBag={updateBag}

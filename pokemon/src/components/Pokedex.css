@@ -5,3 +5,22 @@
     z-index: -1;
 }
 
+.homeButton {
+    font-size: 24px;
+    font-family: "Courier New", monospace;
+    color: rgba(255, 255, 255, 1);
+    font-weight: bold;
+    width: 200px;
+}
+
+.battleButton {
+    font-size: 24px;
+    font-family: "Courier New", monospace;
+    color: rgba(255, 255, 255, 1);
+    font-weight: bold;
+    width: 200px;
+}
+
+.buttondiv {
+    display: flex;
+}

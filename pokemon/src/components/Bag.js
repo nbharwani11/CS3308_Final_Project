@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Card from './Card'
+import "./bag.css"
 
 const Bag = ({ bag, updateBag }) => {
     const renderList = () => {

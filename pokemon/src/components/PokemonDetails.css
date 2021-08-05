@@ -4,7 +4,12 @@
     background-position: absolute;
     background-size: cover;
     z-index: -1;
+    padding-left: 40px;
+    font-family: "Courier New", monospace;
+    font-weight: bold;
 }
 
 
-
+.details {
+    font-weight: bold;
+}

@@ -3,6 +3,8 @@
     background-image: url(https://www.tynker.com/projects/screenshot/57da4d8ba924051b458b4567/pokemon-battles-alpha.png);
     background-position: center;
     background-size: cover;
+    font-family: "Courier New", monospace;
+    font-weight: bold;
 }
 
 .modal-wrapper {
@@ -37,3 +39,5 @@
 .modal-title {
   align-self: center;
 }
+
+.backButton {}

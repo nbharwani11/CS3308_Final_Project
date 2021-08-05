@@ -37,12 +37,16 @@ class Pokedex extends Component {
         console.log("pokemons", pokemons)
         console.log("bag", bag)
         console.log("move", pokemons.name)
+        
+        
         return (
             <div className="p-3 mb-2 bg-light text-dark" className="pokedex">
             <div className="container">
                 <div classname="buttondiv">
                       <button type="button" className="homeButton  btn btn-outline-dark btn-lg"><Link className="btn-primary-link" to={"../"}>Home</Link></button>
-                    <button type="button" className="battleButton  btn btn-outline-dark btn-lg"><Link className="btn-primary-link" to={"/battle"}>Battle</Link></button>
+            {bag.length > 0 && (<div>
+             <button  type="button" className="battleButton  btn btn-outline-dark btn-lg"><Link className="btn-primary-link" to={"/battle"}>Battle</Link></button>
+              </div>)}   
                 </div>
 
                 <Bag 

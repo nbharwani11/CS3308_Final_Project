@@ -36,7 +36,11 @@ class PokemonDetails extends Component {
                     <button type="button" className="backButton  btn btn-outline-dark btn-lg"><Link className="btn-primary-link" to={"/pokedex"}>BACK</Link></button>
                 </div>
         
-                {pokemonId > 1 && <Link to={`/pokedex/${pokemonId - 1}`}>PREVIOUS</Link>}
+                <div classname="buttondiv">
+                    <button type="button" className="backButton  btn btn-outline-dark btn-lg">{pokemonId > 1 && <Link to={`/pokedex/${pokemonId - 1}`}>PREVIOUS</Link>}</button>
+                </div>
+        
+{/* {pokemonId > 1 && <Link to={`/pokedex/${pokemonId - 1}`}>PREVIOUS</Link>} */}
 
                 <div style={{width: "20%"}}>
                     <Card
@@ -53,7 +57,12 @@ class PokemonDetails extends Component {
                         })}
                     </p>
                 </div>
-                {pokemonId < 151 && <Link to={`/pokedex/${parseInt(pokemonId) + 1}`}>NEXT</Link>}
+                
+                <div classname="buttondiv">
+                    <button type="button" className="backButton  btn btn-outline-dark btn-lg">{pokemonId < 151 && <Link to={`/pokedex/${parseInt(pokemonId) + 1}`}>NEXT</Link>}</button>
+                </div>
+
+                {/* {pokemonId < 151 && <Link to={`/pokedex/${parseInt(pokemonId) + 1}`}>NEXT</Link>} */}
             </div>
         ) : null
     }

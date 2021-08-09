@@ -29,8 +29,24 @@ class Battle extends Component {
     }
 
     componentDidMount() {
-        // TODO: Add logic to generate a specific array of pokemon with hp equivalent base experience // decides AI/enemy bag
-        const opponentBagArray = [25, 37, 87, 104]
+        let opponentBagSize = 1
+        const min = Math.ceil(this.props.bag.length - 1);
+        let max = Math.floor(this.props.bag.length + 2);
+
+        if (this.props.bag.length > 1) {
+            if (this.props.bag.length > 5) {
+                max = 1
+            }
+            
+            opponentBagSize = Math.floor(Math.random() * (max - min) + min);
+        }
+
+        const opponentBagArray = []
+
+        for (let i = 0; i < opponentBagSize; i++) {
+            opponentBagArray[i] = Math.floor(Math.random() * (152 - 1) + 1);
+        }
+        
         this.props.fetchOpponentBag(opponentBagArray)
     }
 

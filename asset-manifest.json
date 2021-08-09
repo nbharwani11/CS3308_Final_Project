@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/pokemon/static/css/main.4e45845c.chunk.css",
+    "main.js": "/pokemon/static/js/main.de32a065.chunk.js",
+    "main.js.map": "/pokemon/static/js/main.de32a065.chunk.js.map",
+    "runtime-main.js": "/pokemon/static/js/runtime-main.64b8f39e.js",
+    "runtime-main.js.map": "/pokemon/static/js/runtime-main.64b8f39e.js.map",
+    "static/js/2.50ab7fb8.chunk.js": "/pokemon/static/js/2.50ab7fb8.chunk.js",
+    "static/js/2.50ab7fb8.chunk.js.map": "/pokemon/static/js/2.50ab7fb8.chunk.js.map",
+    "index.html": "/pokemon/index.html",
+    "static/css/main.4e45845c.chunk.css.map": "/pokemon/static/css/main.4e45845c.chunk.css.map",
+    "static/js/2.50ab7fb8.chunk.js.LICENSE.txt": "/pokemon/static/js/2.50ab7fb8.chunk.js.LICENSE.txt",
+    "static/media/PokemonDetails.css": "/pokemon/static/media/background.1e11dfa3.jpg",
+    "static/media/home_opening.82d86eb5.mp3": "/pokemon/static/media/home_opening.82d86eb5.mp3",
+    "static/media/palettetown_pokedex.e8298f1e.mp3": "/pokemon/static/media/palettetown_pokedex.e8298f1e.mp3",
+    "static/media/pokecenter_pokedex.fdd99934.mp3": "/pokemon/static/media/pokecenter_pokedex.fdd99934.mp3"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.64b8f39e.js",
+    "static/js/2.50ab7fb8.chunk.js",
+    "static/css/main.4e45845c.chunk.css",
+    "static/js/main.de32a065.chunk.js"
+  ]
+}

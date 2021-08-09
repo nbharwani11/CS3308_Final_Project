@@ -1,4 +1,4 @@
-# Project Title: Pokemon A New Age 
+# Project Title: Pokémon A New Age 
 
 ## Team members' names:
 - Nicholas Stafford
@@ -8,10 +8,10 @@
 
 ## Information for Project:
 1. Vision statement: what would you tell potential customers?
-  - We love Pokemon! Gotta catch'em all!
+  - We love Pokémon! Gotta catch'em all!
 
 2. Motivation: why are you working on this project?
-  - We remember playing Pokemon when we were kids and now we that we're older we want to bring back the love we experienced when we were that age. Most of the team also wanted to learn JS so this project was the perfect opportunity. Potentially using Trello as well seems like a good project tracking software to learn.
+  - We remember playing Pokémon when we were kids and now we that we're older we want to bring back the love we experienced when we were that age. Most of the team also wanted to learn JS so this project was the perfect opportunity. Potentially using Trello as well seems like a good project tracking software to learn.
 
 3. Risks to project completion, possibly including:
   - new language or working environment
@@ -30,7 +30,7 @@
   - Jonathan has 8 years of experience in their career with this, so he will take the lead. Sean, Nick and Naureen will be researching more about the language and assisting Jonathan. Project will have many for loops, while loops, if/else statements. The project will be more stylic and basic in terms of the structure
 
 5. Development method: scrum, kanban, waterfall: with specifics!
-  - Using a pokemon API
+  - Using a Pokémon API
   - Going with the scrum method: 
 	- 1 week spirits meeting every Wednesday
 	- Tasks will be broken up into smaller pieces due to new language risk
